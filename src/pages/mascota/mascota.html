@@ -1,0 +1,61 @@
+<!--
+  Generated template for the MascotaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title  style="background-color: rgb(105, 211, 214)" >{{mascota.ad.subject}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding  style="background-color: rgb(105, 211, 214)">
+
+  <ion-card>
+    <ion-slides pager>
+    <ion-slide *ngFor= "let img of imgs">
+        <img src= "https://img.segundamano.mx/medium/{{img.path}}">
+      </ion-slide>
+    </ion-slides>
+  </ion-card>
+
+  <ion-card>
+    <h1>{{mascota.ad.subject}}</h1>
+    <h1 >{{mascota.ad.prices[0].label}}</h1>
+    <h1> <ion-icon name ="heart" item-end (click)= "favoritos(mascota)"></ion-icon></h1>
+
+  </ion-card>
+
+  <ion-card>
+    <ion-col>
+      <ion-row>
+        <h1>Caracteristicas</h1>
+       </ion-row>
+       <ion-col>
+         <h2>Ubicacion:</h2>
+       </ion-col>
+       <ion-row>
+          <h3>{{mascota.ad.locations[0].locations[0].locations[0].label}},{{mascota.ad.locations[0].locations[0].label}},{{mascota.ad.locations[0].label}}</h3>
+       </ion-row>
+    </ion-col>
+    <ion-col>
+        <h2>Publicado:</h2>
+      </ion-col>
+      <ion-row>
+         <h3>{{mascota.ad.list_time.label}}</h3>
+      </ion-row>
+  </ion-card>
+
+  <ion-card>
+    <ion-col>
+      <ion-row>
+          <h1>Descripcíon:</h1>
+      </ion-row>
+      <ion-col>
+          <h2>{{mascota.ad.body}}</h2>
+      </ion-col>
+    </ion-col>
+  </ion-card>
+
+</ion-content>
